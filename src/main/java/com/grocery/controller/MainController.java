@@ -6,15 +6,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class MainController {
+
     @GetMapping("/")
-    public String home(Model model){
-        String name = "Nisith";
-        model.addAttribute("text",name);
+    public String login(){
         return "login";
     }
 
     @GetMapping("/index")
-    public String index(){
+    public String index(Model model){
+        String name = "Welcome Our Service";
+        model.addAttribute("Greeting",name);
         return "index";
     }
 
@@ -37,6 +38,5 @@ public class MainController {
     public String contact(){
         return "contact";
     }
-
 
 }
